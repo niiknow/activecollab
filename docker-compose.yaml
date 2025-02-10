@@ -3,6 +3,7 @@ version: "3.3"
 services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch-oss:6.8.13
+    env_file: .env
     container_name: elasticsearch
     ports:
       - "127.0.0.1:9200:9200"
@@ -12,6 +13,7 @@ services:
 
   database:
     image: mariadb:10.6
+    env_file: .env
     container_name: database
     environment:
       - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD:-root_password}
@@ -29,6 +31,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
+    env_file: .env
     container_name: phpmyadmin
     ports:
       - 8070:80
@@ -44,6 +47,7 @@ services:
 
   activecollab:
     build: .
+    env_file: .env
     container_name: activecollab
     ports:
       - 8888:80
