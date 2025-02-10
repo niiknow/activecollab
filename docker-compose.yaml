@@ -48,7 +48,7 @@ services:
     ports:
       - 8888:80
     volumes:
-      - ./data/app:/var/www/html
+      - ./data/app:/var/www
     depends_on:
       - database
       - elasticsearch
