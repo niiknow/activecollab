@@ -2,7 +2,9 @@
 
 1.  git clone https://github.com/niiknow/activecollab
 2.  chown -R 1000:1000 data/
-3.  place files in data/app
+3.  place files in data/app folder and cd data folder
+`ln -s ./public/ html`
+
 4.  plase sql restoration file in data/initdb
 5.  copy `.env-example` to `.env` and update config file with valid info
 6.  `docker-compose up`
