@@ -50,8 +50,8 @@ services:
       - 8888:80
     volumes:
       - ./data/app:/var/www
-      - ./log/apache2:/var/log/apache2
-      - ./log/cron:/var/log/cron
+      - ./data/log/apache2:/var/log/apache2
+      - ./data/log/cron:/var/log/cron
     depends_on:
       - database
       - elasticsearch
