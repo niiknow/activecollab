@@ -1,3 +1,4 @@
 *   * * * * root php /var/www/tasks/cron_jobs/run_every_minute.php >> /var/log/cron.log 2>&1
 */3 * * * * root php /var/www/tasks/cron_jobs/check_imap_every_3_minutes.php >> /var/log/cron.log 2>&1
 0   * * * * root php /var/www/tasks/cron_jobs/run_every_hour.php >> /var/log/cron.log 2>&1
+# Mandatory blank line
