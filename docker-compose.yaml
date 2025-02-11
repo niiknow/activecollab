@@ -27,20 +27,20 @@ services:
       - "127.0.0.1:3306:3306"
     restart: unless-stopped
 
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin
-    env_file: .env
-    container_name: phpmyadmin
-    ports:
-      - 8070:80
-    environment:
-      - PMA_ARBITRARY=1
-      - PMA_HOST=database
-      - PMA_USER=${MYSQL_USER:-app}
-      - PMA_PASSWORD=${MYSQL_PASSWORD:-app_password}
-    depends_on:
-      - database
-    restart: unless-stopped
+  # phpmyadmin:
+  #   image: phpmyadmin/phpmyadmin
+  #   env_file: .env
+  #   container_name: phpmyadmin
+  #   ports:
+  #     - 8070:80
+  #   environment:
+  #     - PMA_ARBITRARY=1
+  #     - PMA_HOST=database
+  #     - PMA_USER=${MYSQL_USER:-app}
+  #     - PMA_PASSWORD=${MYSQL_PASSWORD:-app_password}
+  #   depends_on:
+  #     - database
+  #   restart: unless-stopped
 
   activecollab:
     build: .
@@ -53,4 +53,4 @@ services:
     depends_on:
       - database
       - elasticsearch
-    restart: unless-stopped
+    restart: always
