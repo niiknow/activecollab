@@ -63,4 +63,4 @@ RUN groupmod -g 1000 www-data \
   && usermod -u 1000 -g 1000 www-data
 RUN chown -R 1000:1000 /var/www
 
-CMD ["sed -i 's/^exec /service cron start\n\nexec /' /usr/local/bin/apache2-foreground"]
+RUN sed -i 's/^exec /service cron start\n\nexec /' /usr/local/bin/apache2-foreground
