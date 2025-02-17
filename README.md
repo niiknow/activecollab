@@ -1,16 +1,13 @@
 # Active Collab legacy support with docker
 
-1.  git clone https://github.com/niiknow/activecollab
-2.  chown -R 1000:1000 data/
-3.  place files in data/app folder and cd data folder
-`ln -s ./public/ html`
+1.  `git clone https://github.com/niiknow/activecollab`
+2.  `chown -R 1000:1000 data/`
+3.  Place files in `data/app` and database restoration sql file in `data/initdb`
+4.  Copy `.env-example` to `.env` and update `.env` file with valid config
+5.  Start interactively with `docker-compose up`
 
-4.  plase sql restoration file in data/initdb
-5.  copy `.env-example` to `.env` and update config file with valid info
-6.  `docker-compose up`
-
-- Reviews and fix any errors
-- Adjust/fix any issue with database login credentials and environment in data/app
+- Reviews and fix any issue/errors
+- Adjust/fix any issue with database login credentials and environment in `data/app`
 
 finally, `docker-compose up -d`
 
